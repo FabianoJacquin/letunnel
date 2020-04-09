@@ -8,6 +8,7 @@ class LetunnelApplicationTests {
 
     @Test
     void contextLoads() {
+        System.out.println("Le Tunnel");
     }
 
 }
