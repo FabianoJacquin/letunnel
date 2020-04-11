@@ -3,39 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <title>Pet Clinic Index</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 </head>
 <body>
 
     <h2 th:text="'List of Users'">Index Page</h2>
 
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th style="width: 150px;">Id</th>
-            <th style="width: 150px;">First Name</th>
-            <th style="width: 150px;">Last Name</th>
-            <th style="width: 150px;">Address</th>
-            <th style="width: 150px;">City</th>
-            <th style="width: 150px;">Telephone</th>
-            <th style="width: 150px;">Mail</th>
-            <th style="width: 150px;">Username</th>
-            <th style="width: 150px;">Password</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="user : ${users}">
-            <th th:text="${user.id}">1</th>
-            <th th:text="${user.firstName}">Giuseppe</th>
-            <th th:text="${user.firstName}">Verdi</th>
-            <th th:text="${user.address}">Via Bianchi</th>
-            <th th:text="${user.city}">Aosta</th>
-            <th th:text="${user.telephone}">12345</th>
-            <th th:text="${user.mail}">test@test.it</th>
-            <th th:text="${user.username}">pinco</th>
-            <th th:text="${user.password}">12345</th>
-        </tr>
-        </tbody>
-    </table>
+    <div class="container-fluid" style="margin-top: 20px">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-primary">
+
+                    <div class="panel-heading">
+                        <h1 class="panel-title">List of users</h1>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive" th:if="${not #lists.isEmpty(users)}">
+                            <table class="table table-hover">
+                                <thead class="thead-inverse">
+                                <tr>
+                                    <th style="width: 150px;">Id</th>
+                                    <th style="width: 150px;">First Name</th>
+                                    <th style="width: 150px;">Last Name</th>
+                                    <th style="width: 150px;">Address</th>
+                                    <th style="width: 150px;">City</th>
+                                    <th style="width: 150px;">Telephone</th>
+                                    <th style="width: 150px;">Mail</th>
+                                    <th style="width: 150px;">Username</th>
+                                    <th style="width: 150px;">Password</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="user : ${users}">
+                                    <th th:text="${user.id}">1</th>
+                                    <th th:text="${user.firstName}">Giuseppe</th>
+                                    <th th:text="${user.firstName}">Verdi</th>
+                                    <th th:text="${user.address}">Via Bianchi</th>
+                                    <th th:text="${user.city}">Aosta</th>
+                                    <th th:text="${user.telephone}">12345</th>
+                                    <th th:text="${user.mail}">test@test.it</th>
+                                    <th th:text="${user.username}">pinco</th>
+                                    <th th:text="${user.password}">12345</th>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
