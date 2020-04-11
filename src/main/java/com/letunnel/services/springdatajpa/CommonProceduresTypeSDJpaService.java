@@ -3,10 +3,12 @@ package com.letunnel.services.springdatajpa;
 import com.letunnel.model.CommonProceduresType;
 import com.letunnel.repositories.CommonProceduresTypeRepository;
 import com.letunnel.services.CommonProceduresTypeService;
+import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Service
 public class CommonProceduresTypeSDJpaService implements CommonProceduresTypeService {
 
     private final CommonProceduresTypeRepository commonProceduresTypeRepository;
